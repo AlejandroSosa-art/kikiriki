@@ -11,6 +11,8 @@ const path = require("path");
 const crypto = require("crypto");
 const app = express();
 
+app.set("trust proxy", 1);
+
 app.get("/api/health", (req, res) => {
   const conectado = mongoose.connection.readyState === 1;
 
